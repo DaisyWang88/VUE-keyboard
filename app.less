@@ -1,0 +1,41 @@
+@import './virtual-input/index.less';
+@import './virtual-keyboard/index.less';
+
+.text{
+	clear: left;
+	color: #999999;
+	.px2rem(margin-top, 100);
+	.px2rem(padding-left, 30);
+	.font-dpr(font-size, 28);
+}
+#vue-keyboard{
+	.px2rem(width, 500);
+	.px2rem(margin-top, 300);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.input-container{
+	 border: 1px solid #D1D5DB;
+   .px2rem(height, 80);
+	 float: none;
+   .px2rem(width, 500);
+   .font-dpr(font-size, 48);
+   .px2rem(padding-top, 10);
+   .input-area{
+     .px2rem(line-height, 35);
+   }
+   .right-space{
+     .px2rem(height, 35);
+     .px2rem(line-height, 35);
+   }
+   .cursor{
+     width: 2px;
+     .px2rem(height, 35);
+     margin: 0 0.5px 0 0.5px;
+   }
+   .space{
+     width: 3px;
+     .px2rem(height, 35);
+   }
+ }

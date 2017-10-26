@@ -1,0 +1,17 @@
+<div id="settlement-account-virtual-input" @click.stop="readyToInput">
+  <div
+    class="input-container"
+    tabindex="-1"
+    @blur.stop="clearCursorFlash($event)"
+    >
+    <div class="input-area">
+      <span class="cursor"></span>
+    </div>
+    <div class="right-space" @click="moveCursor($event)">
+      <span
+        v-if="showText"
+        class="gray-text"
+        v-text="placeholder"></span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+.px2rem(@name, @px) {
+  @{name}: @px /75 * 1rem;
+}
+.px2rem2(@name, @px1, @px2, @px3, @px4) {
+  @{name}:@px1 /75 * 1rem  @px2 /75 * 1rem  @px3 /75 * 1rem  @px4 /75 * 1rem;
+}
+
+.font-dpr(@name, @px){
+    @{name}: round(@px/2) * 1px;
+    [data-dpr="2"] & {
+        @{name}: @px * 1px;
+    }
+    // for mx3
+    [data-dpr="2.5"] & {
+        @{name}: round(@px /2 * 2.5) * 1px;
+    }
+    // for 小米note
+    [data-dpr="2.75"] & {
+        @{name}: round(@px /2 * 2.75) * 1px;
+    }
+    [data-dpr="3"] & {
+        @{name}: round(@px * 3 /2) * 1px
+    }
+    // for 三星note4
+    [data-dpr="4"] & {
+        @{name}: @px * 2px;
+    }
+}
+@white: #ffffff;
+@font-black: #333333;
+#settlement-account-virtual-keyboard{
+  user-select: none;
+  .key-container{
+    background-color: @white;
+		position: fixed;
+		z-index: 999;
+    bottom: 0;
+    right: -2px;
+    width: 100%;
+    .font-dpr(font-size, 54);
+    color: @font-black;
+
+    .px2rem(height, 442);
+		border-top: 1px solid #D1D5DB;
+
+    .error-down{
+      .px2rem(margin-left, -1.5);
+      .px2rem(margin-right, -1.5);
+      .px2rem(height, 60);
+      text-align: center;
+      span{
+        display: inline-block;
+        border-style: none solid solid none;
+        border-width: 1px;
+        border-color: #D1D5DB;
+        .px2rem(height, 30);
+        .px2rem(width, 30);
+        position: relative;
+        .px2rem(bottom, 20);
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+      }
+    }
+    .gray{
+      background-color: #D1D5DB;
+    }
+    .row {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-content:flex-start;
+      align-content:flex-start;
+      .px2rem(margin-left, -1.5);
+      .px2rem(margin-right, -1.5);
+      .num-item, .delete {
+        box-sizing: border-box;
+        float:left;
+        // flex-grow: 1;
+        // flex-shrink:1;
+        // flex-basis:0;
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        flex: 1;
+        border-top: 0.5px solid #D1D5DB;
+        border-right: 0.5px solid #D1D5DB;
+        margin: 0;
+        text-align: center;
+        .px2rem(height, 95);
+        .px2rem(width, 250);
+        .px2rem(line-height, 95);
+      }
+    }
+	}
+
+}

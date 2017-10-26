@@ -1,0 +1,82 @@
+.px2rem(@name, @px) {
+  @{name}: @px /75 * 1rem;
+}
+.px2rem2(@name, @px1, @px2, @px3, @px4) {
+  @{name}:@px1 /75 * 1rem  @px2 /75 * 1rem  @px3 /75 * 1rem  @px4 /75 * 1rem;
+}
+
+.font-dpr(@name, @px){
+    @{name}: round(@px/2) * 1px;
+    [data-dpr="2"] & {
+        @{name}: @px * 1px;
+    }
+    // for mx3
+    [data-dpr="2.5"] & {
+        @{name}: round(@px /2 * 2.5) * 1px;
+    }
+    // for 小米note
+    [data-dpr="2.75"] & {
+        @{name}: round(@px /2 * 2.75) * 1px;
+    }
+    [data-dpr="3"] & {
+        @{name}: round(@px * 3 /2) * 1px
+    }
+    // for 三星note4
+    [data-dpr="4"] & {
+        @{name}: @px * 2px;
+    }
+}
+@white: #ffffff;
+@label-gray: #666666;
+#settlement-account-virtual-input{
+  /*float: left;*/
+
+  .px2rem(margin-left, 20);
+
+  .font-dpr(font-size, 70);
+  color: @font-black;
+  .input-container{
+    // .px2rem(min-width, 100);
+    .px2rem(margin-top, 6);
+		overflow: hidden;
+    .input-area{
+      .px2rem(line-height, 70);
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      float: left;
+    }
+    .right-space{
+      overflow: hidden;
+      .px2rem(height, 70);
+      .px2rem(line-height, 70);
+      .gray-text{
+        color: #999999;
+      }
+
+    }
+    span{
+      display: inline-block;
+    }
+  }
+
+  .cursor{
+		width: 2px;
+    .px2rem(height, 70);
+		background-color: #1D8FEE;
+		margin: 0 1px 0 1px;
+	}
+	.space{
+    position: relative;
+    z-index: 999;
+		width: 4px;
+		.px2rem(height, 70);
+	}
+
+	.hidden {
+		visibility:hidden;
+  }
+
+}

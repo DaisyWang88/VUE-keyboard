@@ -1,0 +1,28 @@
+<div id="settlement-account-virtual-keyboard">
+  <div class="key-container" v-show="isShow">
+    <div class="error-down" @click="hideBoard">
+      <span></span>
+    </div>
+    <div class="row">
+      <p class="num-item" @click="getValue('1')">1</p>
+      <p class="num-item" @click="getValue('2')">2</p>
+      <p class="num-item" @click="getValue('3')">3</p>
+    </div>
+    <div class="row">
+      <p class="num-item" @click="getValue('4')">4</p>
+      <p class="num-item" @click="getValue('5')">5</p>
+      <p class="num-item" @click="getValue('6')">6</p>
+    </div>
+    <div class="row">
+      <p class="num-item" @click="getValue('7')">7</p>
+      <p class="num-item" @click="getValue('8')">8</p>
+      <p class="num-item" @click="getValue('9')">9</p>
+    </div>
+    <div class="row">
+      <p class="num-item gray" @click="getValue('.')">.</p>
+      <p class="num-item" @click="getValue('0')">0</p>
+      <div class="delete gray" id="cross" @click="deleteElement()">&#215;</div>
+    </div>
+
+    </div>
+</div>

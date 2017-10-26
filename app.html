@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+	<meta  charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+
+	<title>vue-keyboard</title>
+	<link rel="stylesheet/less" href="./app.less"/>
+	<link rel="stylesheet/less" href="./app.less"/>
+</head>
+<script src="./less.js"></script>
+<script src="vue.js"></script>
+<body style="font-size: 12px;">
+
+	<div id="vue-keyboard">
+		<v-input
+	    ref="virtualInput"
+	    v-model="amount"
+	    :placeholder="placeText"
+	    :is-auto-focus="true"
+	    @show-key-board="showKeyBoard">
+	  </v-input>
+		<v-keyboard ref="virtualKeyBoard"></v-keyboard>
+		<div class="text">您输入的金额是:&#165;<span v-text="amount"></span></div>
+	</div>
+	<!-- <script src="./virtual-input/index.js" type="module"></script>
+	<script src="./virtual-keyboard/index.js" type="module"></script> -->
+	<script src="./app.js" type="module">
+
+	</script>
+</body>
+</html>
