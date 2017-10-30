@@ -20,6 +20,11 @@ let vApp = new Vue({
 		}
 	},
 	mounted() {
+		if ('addEventListener' in document) {
+		    document.addEventListener('DOMContentLoaded', function(){
+		        FastClick.attach(document.body);
+		    }, false);
+		}
 		//保证子组件实例化完成之后将virtualInput的实例传给virtualKeyBoard
 		this.$refs.virtualKeyBoard.$emit('getInputVm', this.$refs.virtualInput);
 	}
